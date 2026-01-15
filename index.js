@@ -86,12 +86,18 @@ app.get('/home',async (req,res)=>{
     }
 });
 
-app.get("/logout", function(req, res) {
-  req.logout(function(err) {
-    if (err) { return err; }
-    res.redirect('/');
+app.get("/logout", (req, res, next) => {
+  req.logout(function (err) {
+    if (err) {
+      return next(err);
+    }
+
+    req.session.destroy(() => {
+      res.redirect("/personal-banking");
+    });
   });
 });
+
 
 app.get("/transfer", (req, res) => {
   if (!req.isAuthenticated()) {

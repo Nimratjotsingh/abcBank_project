@@ -116,6 +116,20 @@ body {
   color: #666;
   text-align: center;
 }
+.logout-btn {
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+  padding: 8px 16px;
+  border-radius: 20px;
+  background: red;
+  transition: background 0.2s ease;
+}
+
+.logout-btn:hover {
+  background: orange
+}
+
 
 /* ================= RESPONSIVE ================= */
 @media (max-width: 600px) {
