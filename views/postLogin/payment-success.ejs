@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Payment Successful | ABC Bank</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/postLogin/css/payment-success.css" />
+</head>
+<body>
+
+  <div class="success-container">
+
+    <!-- SUCCESS ICON -->
+    <div class="success-icon">
+      ✓
+    </div>
+
+    <!-- MAIN MESSAGE -->
+    <h1>Payment Successful</h1>
+    <p class="subtitle">
+      Your transaction has been completed successfully.
+    </p>
+
+    <!-- TRANSACTION SUMMARY -->
+    <div class="summary-box">
+
+      <div class="row">
+        <span>Amount Paid</span>
+        <strong>₹ <%= amount || "--" %></strong>
+      </div>
+
+      <div class="row">
+        <span>Paid To</span>
+        <strong><%= receiverName || "ABC Bank User" %></strong>
+      </div>
+
+      <div class="row">
+        <span>Transaction ID</span>
+        <strong><%= txnId || "TXN123456789" %></strong>
+      </div>
+
+      <div class="row">
+        <span>Date & Time</span>
+        <strong><%=new Date().toLocaleString() %></strong>
+      </div>
+
+    </div>
+
+    <!-- ACTION BUTTONS -->
+    <div class="actions">
+      <a href="/home" class="btn primary">Go to Dashboard</a>
+      <a href="/transfer" class="btn secondary">Make Another Transfer</a>
+    </div>
+
+    <!-- FOOTER NOTE -->
+    <p class="secure-note">
+      🔒 This transaction is secured and recorded as per banking regulations.
+    </p>
+
+  </div>
+
+</body>
+</html>

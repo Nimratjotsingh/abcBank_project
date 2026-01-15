@@ -1,0 +1,192 @@
+/* ===========================
+   GLOBAL RESET
+=========================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", system-ui, sans-serif;
+}
+
+body {
+  background: #eef2f7;
+  color: #1c1c1c;
+}
+
+/* ===========================
+   HEADER
+=========================== */
+.kyc-header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 20px 40px;
+  background: #ffffff;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+}
+
+.kyc-header img {
+  width: 48px;
+}
+
+.kyc-header h2 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #003366;
+}
+
+/* ===========================
+   MAIN CONTAINER
+=========================== */
+.kyc-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  padding: 70px;
+}
+
+/* ===========================
+   VISUAL SECTION
+=========================== */
+.kyc-visuals {
+  display: flex;
+  flex-direction: column;
+}
+
+.kyc-visuals img {
+  width: 100%;
+  border-radius: 20px;
+  margin-bottom: 30px;
+  box-shadow: 0 25px 45px rgba(0,0,0,0.15);
+}
+
+/* ===========================
+   FORM SECTION
+=========================== */
+.kyc-form {
+  background: #ffffff;
+  padding: 55px;
+  border-radius: 22px;
+  box-shadow: 0 30px 60px rgba(0,0,0,0.12);
+}
+
+.kyc-form h1 {
+  font-size: 32px;
+  color: #003366;
+  margin-bottom: 10px;
+}
+
+.kyc-sub {
+  color: #555;
+  font-size: 15px;
+  margin-bottom: 35px;
+}
+
+/* ===========================
+   FORM ELEMENTS
+=========================== */
+.kyc-form label {
+  display: block;
+  margin-top: 18px;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.kyc-form input {
+  width: 100%;
+  padding: 14px 16px;
+  margin-top: 8px;
+  border-radius: 12px;
+  border: 1px solid #d0d5dd;
+  font-size: 15px;
+  transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+
+.kyc-form input:focus {
+  outline: none;
+  border-color: #0a5fd8;
+  box-shadow: 0 0 0 4px rgba(10,95,216,0.12);
+}
+
+/* ===========================
+   INFO BOX
+=========================== */
+.kyc-info {
+  background: #f5f7fb;
+  border-left: 5px solid #0a5fd8;
+  padding: 16px 18px;
+  margin: 25px 0;
+  font-size: 14px;
+  color: #333;
+  border-radius: 10px;
+}
+
+/* ===========================
+   BUTTON
+=========================== */
+.primary-btn {
+  width: 100%;
+  padding: 15px;
+  margin-top: 10px;
+  border-radius: 30px;
+  border: none;
+  background: linear-gradient(135deg, #0a5fd8, #16a085);
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.primary-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 15px 30px rgba(10,95,216,0.35);
+}
+
+/* ===========================
+   DISCLAIMER
+=========================== */
+.kyc-note {
+  margin-top: 18px;
+  font-size: 13px;
+  color: #666;
+  line-height: 1.6;
+}
+
+/* ===========================
+   FOOTER
+=========================== */
+.kyc-footer {
+  text-align: center;
+  padding: 22px;
+  font-size: 14px;
+  color: #444;
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+@media (max-width: 1000px) {
+  .kyc-container {
+    grid-template-columns: 1fr;
+    padding: 50px;
+  }
+
+  .kyc-form {
+    padding: 40px;
+  }
+}
+
+@media (max-width: 600px) {
+  .kyc-header {
+    padding: 18px 25px;
+  }
+
+  .kyc-container {
+    padding: 30px 20px;
+  }
+
+  .kyc-form h1 {
+    font-size: 26px;
+  }
+}

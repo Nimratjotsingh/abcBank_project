@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dashboard | ABC Bank</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/postLogin/css/dashboard.css">
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="dash-header">
+  <div class="bank-name">ABC Bank</div>
+  <div class="user-info">
+    Welcome, <strong><%= user.fullname %></strong>
+  </div>
+</header>
+
+<!-- MAIN DASHBOARD -->
+<main class="dashboard">
+
+  <!-- ACCOUNT SUMMARY -->
+  <section class="account-summary">
+    <h2>Account Overview</h2>
+
+    <div class="summary-card">
+      <div>
+        <p class="label">Account Number</p>
+        <p class="value"><%= user.accno %></p>
+      </div>
+
+      <div>
+        <p class="label">Available Balance</p>
+        <p class="value balance">
+          ₹ <%= balance ?? "— — —" %>
+        </p>
+        <small class="note">Current Available Balance</small>
+      </div>
+    </div>
+  </section>
+
+  <!-- ACTIONS -->
+  <section class="quick-actions">
+    <h2>Quick Actions</h2>
+
+    <div class="actions-grid">
+
+      <a href="/transfer"> <div class="action-card">
+        <div class="icon">🔁</div>
+        <p>Transfer Money</p>
+        <small>To ABC Bank users</small>
+      </div></a>
+
+      <div class="action-card">
+        <div class="icon">💰</div>
+        <p>Open Fixed Deposit</p>
+        <small>Guaranteed returns</small>
+      </div>
+
+      <div class="action-card">
+        <div class="icon">📆</div>
+        <p>Start Recurring Deposit</p>
+        <small>Monthly savings</small>
+      </div>
+
+      <a href="/transactions">
+      <div class="action-card">
+        <div class="icon">📄</div>
+        <p>Account Statement</p>
+        <small>Download PDF</small>
+      </div></a>
+
+      <a href="/profile"><div class="action-card">
+        <div class="icon">⚙️</div>
+        <p>Profile Settings</p>
+        <small>Update details</small>
+      </div></a>
+
+    </div>
+  </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="dash-footer">
+  <p>🔒 Secured by ABC Bank | RBI Compliant</p>
+</footer>
+
+</body>
+</html>

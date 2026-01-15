@@ -1,0 +1,129 @@
+/* ================= RESET ================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", system-ui, sans-serif;
+}
+
+body {
+  background: #f4f7fb;
+  color: #1c1c1c;
+}
+
+/* ================= HEADER ================= */
+.profile-header {
+  background: #003366;
+  color: white;
+  padding: 22px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.bank-name {
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.user-name {
+  font-size: 15px;
+}
+
+/* ================= MAIN ================= */
+.profile-container {
+  display: flex;
+  justify-content: center;
+  padding: 50px 20px;
+}
+
+/* ================= CARD ================= */
+.profile-card {
+  background: white;
+  padding: 45px;
+  border-radius: 22px;
+  max-width: 520px;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 30px 60px rgba(0,0,0,0.12);
+}
+
+/* ================= AVATAR ================= */
+.avatar {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #0a5fd8, #16a085);
+  color: white;
+  font-size: 36px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 18px;
+}
+
+.profile-card h2 {
+  color: #003366;
+}
+
+.subtitle {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 30px;
+}
+
+/* ================= INFO GRID ================= */
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  text-align: left;
+}
+
+.info-item {
+  background: #f5f7fb;
+  padding: 16px 18px;
+  border-radius: 14px;
+}
+
+.info-item span {
+  display: block;
+  font-size: 12px;
+  color: #666;
+  margin-bottom: 6px;
+}
+
+.info-item strong {
+  font-size: 15px;
+  color: #003366;
+}
+
+/* SPECIAL STYLES */
+.balance {
+  color: #16a085;
+}
+
+.active {
+  color: #16a085;
+  font-weight: 600;
+}
+
+/* ================= FOOTER NOTE ================= */
+.security-note {
+  margin-top: 25px;
+  font-size: 13px;
+  color: #666;
+  text-align: center;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 600px) {
+  .profile-card {
+    padding: 35px 25px;
+  }
+
+  .info-grid {
+    grid-template-columns: 1fr;
+  }
+}

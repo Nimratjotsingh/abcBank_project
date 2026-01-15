@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>My Profile | ABC Bank</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/postLogin/css/profile.css" />
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="profile-header">
+  <div class="bank-name">ABC Bank</div>
+  <div class="user-name">
+    Welcome, <strong><%= user.fullname %></strong>
+  </div>
+</header>
+
+<!-- MAIN -->
+<main class="profile-container">
+
+  <!-- PROFILE CARD -->
+  <section class="profile-card">
+
+    <div class="avatar">
+      <%= user.fullname.charAt(0).toUpperCase() %>
+    </div>
+
+    <h2><%= user.fullname %></h2>
+    <p class="subtitle">Personal Banking Customer</p>
+
+    <div class="info-grid">
+
+      <div class="info-item">
+        <span>Account Number</span>
+        <strong><%= user.accno %></strong>
+      </div>
+
+      <div class="info-item">
+        <span>Registered Mobile</span>
+        <strong><%= user.mobno %></strong>
+      </div>
+
+      <div class="info-item">
+        <span>Bank</span>
+        <strong>ABC Bank</strong>
+      </div>
+
+      <div class="info-item">
+        <span>Account Type</span>
+        <strong>Savings Account</strong>
+      </div>
+
+      <div class="info-item">
+        <span>Available Balance</span>
+        <strong class="balance">
+          ₹ <%= user.balance ?? "— — —" %>
+        </strong>
+      </div>
+
+      <div class="info-item">
+        <span>Status</span>
+        <strong class="active">Active</strong>
+      </div>
+
+    </div>
+
+  </section>
+
+
+</main>
+
+</body>
+</html>

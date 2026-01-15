@@ -1,0 +1,121 @@
+/* ================= RESET ================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", system-ui, sans-serif;
+}
+
+body {
+  background: #f4f7fb;
+  color: #1c1c1c;
+}
+
+/* ================= HEADER ================= */
+.dash-header {
+  background: #003366;
+  color: white;
+  padding: 22px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.bank-name {
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.user-info {
+  font-size: 15px;
+  opacity: 0.9;
+}
+
+/* ================= MAIN ================= */
+.dashboard {
+  padding: 40px 50px;
+}
+
+.dashboard h2 {
+  margin-bottom: 25px;
+  color: #003366;
+}
+
+/* ================= TRANSACTION CARD ================= */
+.summary-card {
+  background: #ffffff;
+  padding: 22px 26px;
+  border-radius: 16px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 20px;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+  border-left: 6px solid #d0d5dd;
+  margin-bottom: 18px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.summary-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 25px 45px rgba(0,0,0,0.12);
+}
+
+/* ================= LABELS & VALUES ================= */
+.label {
+  font-size: 13px;
+  color: #666;
+  margin-bottom: 6px;
+}
+
+.value {
+  font-size: 16px;
+  font-weight: 600;
+  color: #003366;
+}
+
+/* CREDIT / DEBIT */
+.value.credit {
+  color: #16a085;
+}
+
+.value.debit {
+  color: #c0392b;
+}
+
+/* STATUS */
+.value.status {
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: capitalize;
+}
+
+/* ================= EMPTY STATE ================= */
+.no-transactions {
+  background: white;
+  padding: 30px;
+  border-radius: 16px;
+  text-align: center;
+  color: #666;
+  box-shadow: 0 15px 30px rgba(0,0,0,0.08);
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+  .dashboard {
+    padding: 30px 20px;
+  }
+
+  .dash-header {
+    padding: 18px 25px;
+  }
+
+  .summary-card {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .summary-card {
+    grid-template-columns: 1fr;
+  }
+}

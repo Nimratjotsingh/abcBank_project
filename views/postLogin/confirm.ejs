@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Confirm Payment</title>
+  <link rel="stylesheet" href="/postLogin/css/confirm.css" />
+</head>
+<body>
+
+  <div class="confirm-container">
+
+    <!-- RECEIVER DETAILS -->
+    <div class="receiver-box">
+      <div class="avatar">
+        <%= receiverName ? receiverName.charAt(0) : "U" %>
+      </div>
+      <h2><%= receiverName || "Receiver Name" %></h2>
+      <p><%= receiverMobile %></p>
+    </div>
+
+    <!-- CONFIRM FORM -->
+    <form action="/pay" method="POST">
+
+      <!-- SEND RECEIVER INFO -->
+      <input type="hidden" name="receiverMobile" value="<%= receiverMobile %>">
+
+      <!-- AMOUNT -->
+      <div class="amount-box">
+        <span>Amount to Pay</span>
+        <input
+          type="number"
+          name="amount"
+          min="1"
+          required
+        />
+      </div>
+
+      <!-- SENDER DETAILS -->
+      <div class="sender-box">
+        <div class="row">
+          <span>From</span>
+          <strong><%= senderName %></strong>
+        </div>
+
+        <div class="row">
+          <span>Bank</span>
+          <strong><%= bankName %></strong>
+        </div>
+
+        <div class="row">
+          <span>Available Balance</span>
+          <strong>₹ <%= balance %></strong>
+        </div>
+      </div>
+
+      <!-- CONFIRM BUTTON -->
+      <button type="submit" class="confirm-btn">
+        Confirm Payment
+      </button>
+
+    </form>
+
+  </div>
+
+</body>
+</html>

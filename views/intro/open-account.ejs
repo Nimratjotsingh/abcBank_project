@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Open Account | ABC Bank</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/intro/css/open-account.css">
+
+</head>
+<body class="kyc-body">
+
+<!-- MINIMAL HEADER -->
+<header class="kyc-header">
+  <img src="/images/icon.png" alt="ABC Bank">
+  <h2>Secure Account Opening</h2>
+</header>
+
+<!-- KYC CONTAINER -->
+<section class="kyc-container">
+
+  <!-- LEFT : IMAGES -->
+  <div class="kyc-visuals">
+    <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5" alt="Bank verification">
+    <img src="https://images.unsplash.com/photo-1601597111158-2fceff292cdc" alt="ID verification">
+    <img src="https://images.unsplash.com/photo-1554224154-26032ffc0d07" alt="Digital banking">
+  </div>
+
+  <!-- RIGHT : FORM -->
+  <div class="kyc-form">
+    <h1>Open Your Account</h1>
+    <p class="kyc-sub">
+      Complete Aadhaar-based verification to securely open your ABC Bank account.
+    </p>
+
+    <form>
+      <label>Full Name (as per Aadhaar)</label>
+      <input type="text" placeholder="Enter full name" required>
+
+      <label>Aadhaar Number</label>
+      <input type="text" placeholder="XXXX XXXX XXXX" maxlength="14" required>
+
+      <label>Mobile Number (linked with Aadhaar)</label>
+      <input type="tel" placeholder="+91 XXXXX XXXXX" required>
+
+      <div class="kyc-info">
+        🔒 Your Aadhaar details are encrypted and used only for identity verification
+        as per UIDAI guidelines.
+      </div>
+
+      <button type="submit" class="primary-btn full-btn">
+        Verify Aadhaar & Continue
+      </button>
+
+      <p class="kyc-note">
+        By continuing, you agree to ABC Bank’s Terms & Conditions and consent to
+        Aadhaar-based eKYC.
+      </p>
+    </form>
+  </div>
+
+</section>
+
+<!-- TRUST FOOTER -->
+<footer class="kyc-footer">
+  <p>✔ RBI Compliant | ✔ UIDAI eKYC | ✔ 256-bit Encryption</p>
+</footer>
+
+</body>
+</html>

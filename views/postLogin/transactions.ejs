@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Transaction History | ABC Bank</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/postLogin/css/transactions.css" />
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="dash-header">
+  <div class="bank-name">ABC Bank</div>
+  <div class="user-info">Transaction History</div>
+</header>
+
+<!-- MAIN -->
+<main class="dashboard">
+
+  <h2>Your Transactions</h2>
+
+  <% if (transactions.length === 0) { %>
+    <div class="no-transactions">
+      No transactions found.
+    </div>
+  <% } %>
+
+  <% transactions.forEach(txn => { 
+      const isDebit = txn.sender_id === userId;
+  %>
+
+    <div class="summary-card">
+
+      <div>
+        <p class="label">
+          <%= isDebit ? "Paid To" : "Received From" %>
+        </p>
+        <p class="value">
+          <%= isDebit ? txn.receiver_name : txn.sender_name %>
+        </p>
+      </div>
+
+      <div>
+        <p class="label">Amount</p>
+        <p class="value <%= isDebit ? 'debit' : 'credit' %>">
+          <%= isDebit ? '-' : '+' %>₹ <%= txn.amount %>
+        </p>
+      </div>
+
+      <div>
+        <p class="label">Status</p>
+        <p class="value status">
+          <%= txn.status %>
+        </p>
+      </div>
+
+      <div>
+        <p class="label">Date</p>
+        <p class="value">
+          <%= new Date(txn.created_at).toLocaleString() %>
+        </p>
+      </div>
+
+    </div>
+
+  <% }) %>
+
+</main>
+
+<script src="/js/transactions.js"></script>
+</body>
+</html>

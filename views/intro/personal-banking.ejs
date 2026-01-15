@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Personal Banking Login | ABC Bank</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/intro/css/personal-banking.css">
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="login-header">
+  <img src="/images/icon.png" alt="ABC Bank Logo">
+  <h2>Personal Banking</h2>
+</header>
+
+<!-- MAIN CONTAINER -->
+<section class="login-container">
+
+  <!-- LEFT: VISUALS -->
+  <div class="login-visuals">
+    <img src="https://images.unsplash.com/photo-1601597111158-2fceff292cdc" alt="Digital banking">
+    <img src="https://images.unsplash.com/photo-1556745757-8d76bdb6984b" alt="Secure payments">
+    <img src="https://images.unsplash.com/photo-1526304640581-d334cdbbf45e" alt="Mobile banking">
+  </div>
+
+  <!-- RIGHT: LOGIN FORM -->
+  <div class="login-box">
+    <h1>Welcome Back</h1>
+    <p class="login-sub">
+      Login securely to access your ABC Bank personal banking dashboard.
+    </p>
+
+    <form action="/personal-login" method="POST">
+      <label>Registered Mobile Number</label>
+      <input type="tel" placeholder="+91 XXXXX XXXXX" name="mobile" required >
+
+      <label>Password</label>
+      <input type="password" placeholder="Enter your password" name="password" required >
+
+      <div class="login-actions">
+
+        <% if (error) { %>
+          <p class="error"><%= error %></p>
+        <% } %>
+
+        <a href="#" class="forgot-link">Forgot Password?</a>
+      </div>
+
+      <button type="submit" class="login-btn">
+        Login Securely
+      </button>
+
+      <p class="login-note">
+        🔒 Your login is protected with advanced encryption and secure authentication.
+      </p>
+    </form>
+  </div>
+
+</section>
+
+<!-- TRUST FOOTER -->
+<footer class="login-footer">
+  <p>✔ RBI Compliant | ✔ Two-Factor Ready | ✔ Bank-Grade Security</p>
+</footer>
+
+</body>
+</html>

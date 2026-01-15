@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Transfer Money</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #e5e5f7;
+        opacity: 0.8;
+        background-image: radial-gradient(#444cf7 0.5px, #e5e5f7 0.5px);
+        background-size: 10px 10px;
+      padding: 40px;
+    }
+
+    .card {
+      max-width: 400px;
+      margin: auto;
+      background: white;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      margin-bottom: 20px;
+    }
+
+    input {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 15px;
+      font-size: 16px;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      background: #0a3d62;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    .user-card {
+      display: flex;
+      align-items: center;
+      margin-top: 20px;
+      padding: 15px;
+      border-radius: 10px;
+      background: #ecf0f1;
+      cursor: pointer;
+    }
+
+    .avatar {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background: #0a3d62;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      margin-right: 15px;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .error {
+      color: red;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="card">
+    <h2>Transfer Money</h2>
+
+    <input type="text" id="mobile" placeholder="Enter mobile number" />
+    <button onclick="searchUser()">Search</button>
+
+    <p id="error" class="error hidden">No account found</p>
+
+     <div id="userCard" class="user-card hidden" onclick="goNext()">
+      <div class="avatar" id="avatar"></div>
+      <div>
+        <strong id="userName"></strong><br />
+        <small id="userMobile"></small>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    async function searchUser() {
+      const mobile = document.getElementById("mobile").value;
+      const error = document.getElementById("error");
+      const card = document.getElementById("userCard");
+
+      error.classList.add("hidden");
+      card.classList.add("hidden");
+
+      const res = await fetch("/search-user", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ mobile })
+      });
+
+      const data = await res.json();
+
+      if (!data.found) {
+        error.classList.remove("hidden");
+        return;
+      }
+
+      document.getElementById("userName").innerText = data.name;
+      document.getElementById("userMobile").innerText = data.mobile;
+      document.getElementById("avatar").innerText =
+        data.name.charAt(0).toUpperCase();
+
+      card.classList.remove("hidden");
+    }
+
+    function goNext() {
+        const mobile = document.getElementById("mobile").value;
+        window.location.href = `/confirm?mobile=${mobile}`;
+    }
+  </script>
+
+</body>
+</html>
