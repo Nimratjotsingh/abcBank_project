@@ -340,6 +340,10 @@ passport.serializeUser(function(user, cb) {
 passport.deserializeUser(function(obj, cb) {
   cb(null, obj);
 });
+// 404 handler (ALWAYS LAST)
+app.use((req, res) => {
+  res.status(404).render("404");
+});
 
 
 
